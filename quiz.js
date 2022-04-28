@@ -161,7 +161,13 @@ choices.forEach(choice => {
       selectedAnswer == currentQuestion.answer ? "right" : "wrong";
 
     if (classToApply === "right") {
+      var ding = new Audio('ding.mp3');
+      ding.play();
       incrementScore(pointsPerQuestion);
+    } else if (classToApply === "wrong") {
+      var buzzer = new Audio('buzzer.wav');
+      buzzer.volume=0.5;
+      buzzer.play();
     }
 
     selectedChoice.parentElement.classList.add(classToApply);
