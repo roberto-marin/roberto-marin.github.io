@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>High Scores</title>
+    <link rel="stylesheet" href="global.css" />
+  </head>
+  <body>
+
+        <div id="bg">
+      <img class="bg-image" src="stage.jpg" alt="">
+      <div class="notbg">
+
+              <div class="nav">
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="quiz.html">Quiz</a></li>
+                  <li class="active"><a href="leaderboard.html">High Scores</a></li>
+                </ul>
+              </div>
+    
+
+
+                 <audio src="family_feud.mp3" loop="loop" id="playAudio"></audio>
+                  <script type="text/javascript">
+                    window.onload = function() {
+                      document.getElementById("playAudio").volume=0.25;
+                      document.getElementById("playAudio").play();
+                    }
+                  </script>
+
+                  <a href="#"><img src="unmute.png" href="javascript:void(0);" onclick="toggleMute()" width="32" height="32" align="right"></a>
+                  <script type="text/javascript">
+                    function toggleMute() {
+                     var myAudio = document.getElementById('playAudio');
+                     myAudio.muted = !myAudio.muted;
+                  }
+                  </script>
+
+
+
+
+
+        <div class="container">
+          <div id="highScores" class="flex-center flex-column">
+            <h1 id="finalScore">High Scores</h1>
+            <h4> Rank - Username - Points</h4>
+            <ul id="highScoresList"></ul>
+              <button
+                class="btn"
+                id="clearLeaderboardBtn"
+                onclick="clearLeaderboard(event)"
+              >Clear History</button>
+          </div>
+        </div>
+        <script src="leaderboard.js"></script>
+
+
+      </div>
+    </div>
+  </body>
+</html>
